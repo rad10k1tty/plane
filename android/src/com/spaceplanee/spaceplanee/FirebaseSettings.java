@@ -67,7 +67,7 @@ public class FirebaseSettings {
         data.put("currentTime", currentTime);
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         assert appId != null;
-        db.collection("TicTacToe").document(appId).set(data, SetOptions.merge());
+        db.collection("spaceplanee").document(appId).set(data, SetOptions.merge());
         sharedPreferences.edit().putString("check", "false").apply();
     }
 
