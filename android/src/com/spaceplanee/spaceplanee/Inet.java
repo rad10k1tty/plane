@@ -1,4 +1,4 @@
-package com.timmytimmysave.savethetimmy;
+package com.spaceplanee.spaceplanee;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -35,12 +35,14 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.littleplane.marsoplane.R;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class bewbewbew extends AppCompatActivity {
+public class Inet extends AppCompatActivity {
 
     private WebView webView;
     private ProgressBar progressBar;
@@ -125,7 +127,7 @@ public class bewbewbew extends AppCompatActivity {
                     Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                     i.addCategory(Intent.CATEGORY_OPENABLE);
                     i.setType("*/*");
-                    bewbewbew.this.startActivityForResult(Intent.createChooser(i, "File Chooser"), FCR);
+                    Inet.this.startActivityForResult(Intent.createChooser(i, "File Chooser"), FCR);
                 }
 
                 public void openFileChooser(ValueCallback uploadMsg, String acceptType) {
@@ -133,7 +135,7 @@ public class bewbewbew extends AppCompatActivity {
                     Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                     i.addCategory(Intent.CATEGORY_OPENABLE);
                     i.setType("*/*");
-                    bewbewbew.this.startActivityForResult(
+                    Inet.this.startActivityForResult(
                             Intent.createChooser(i, "File Browser"),
                             FCR);
                 }
@@ -143,20 +145,20 @@ public class bewbewbew extends AppCompatActivity {
                     Intent i = new Intent(Intent.ACTION_GET_CONTENT);
                     i.addCategory(Intent.CATEGORY_OPENABLE);
                     i.setType("*/*");
-                    bewbewbew.this.startActivityForResult(Intent.createChooser(i, "File Chooser"), bewbewbew.FCR);
+                    Inet.this.startActivityForResult(Intent.createChooser(i, "File Chooser"), Inet.FCR);
                 }
 
                 public boolean onShowFileChooser(
                         WebView webView, ValueCallback<Uri[]> filePathCallback,
                         FileChooserParams fileChooserParams) {
-                    int permissionStatus = ContextCompat.checkSelfPermission(bewbewbew.this, Manifest.permission.READ_EXTERNAL_STORAGE);
+                    int permissionStatus = ContextCompat.checkSelfPermission(Inet.this, Manifest.permission.READ_EXTERNAL_STORAGE);
                     if (permissionStatus == PackageManager.PERMISSION_GRANTED) {
                         if (mUMA != null) {
                             mUMA.onReceiveValue(null);
                         }
                         mUMA = filePathCallback;
                         Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                        if (takePictureIntent.resolveActivity(bewbewbew.this.getPackageManager()) != null) {
+                        if (takePictureIntent.resolveActivity(Inet.this.getPackageManager()) != null) {
                             File photoFile = null;
                             try {
                                 photoFile = createImageFile();
@@ -252,7 +254,7 @@ public class bewbewbew extends AppCompatActivity {
 
         if (Build.VERSION.SDK_INT >= 21) {
             Uri[] results = null;
-            if (resultCode == bewbewbew.RESULT_OK) {
+            if (resultCode == Inet.RESULT_OK) {
                 if (requestCode == FCR) {
                     if (null == mUMA) {
                         return;
@@ -303,7 +305,7 @@ public class bewbewbew extends AppCompatActivity {
                     .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int id) {
                             dialog.dismiss();
-                            bewbewbew.super.onBackPressed();
+                            Inet.super.onBackPressed();
                         }
                     })
                     .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {

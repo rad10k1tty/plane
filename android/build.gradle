@@ -35,7 +35,7 @@ android {
         exclude 'META-INF/robovm/ios/robovm.xml'
     }
     defaultConfig {
-        applicationId "com.timmytimmysave.savethetimmy"
+        applicationId "com.spaceplanee.spaceplanee"
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 2

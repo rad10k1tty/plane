@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.timmytimmysave.savethetimmy">
+    package="com.littleplane.marsoplane">
 
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,7 +20,8 @@
         android:theme="@style/GdxTheme"
         tools:ignore="UnusedAttribute"
         tools:replace="android:allowBackup">
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name="com.spaceplanee.spaceplanee.SplashScreen"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,7 +36,7 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
         <activity
-            android:name=".AndroidLauncher"
+            android:name="com.spaceplanee.spaceplanee.AndroidLauncher"
             android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
             android:label="@string/app_name"
             android:screenOrientation="landscape">

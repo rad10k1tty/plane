@@ -1,4 +1,4 @@
-package com.timmytimmysave.savethetimmy;
+package com.spaceplanee.spaceplanee;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
