@@ -13,10 +13,10 @@ import com.badlogic.gdx.math.Intersector;
 
 import java.util.Random;
 
-public class timmytimmysave extends ApplicationAdapter {
+public class spaceplanee extends ApplicationAdapter {
 	SpriteBatch batch;
-	Texture img,bird;
-	float bw,bh,sw,sh,bx,by,bbh;
+	Texture img, bird;
+	float bw, bh, sw, sh, bx, by, bbh;
 	float velocity = 0.0f;
 	float gravity = 0.6f;
 	int nbees = 3;

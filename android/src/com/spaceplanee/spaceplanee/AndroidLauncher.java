@@ -46,12 +46,12 @@ public class AndroidLauncher extends AndroidApplication {
 		facebook(this, installID);
 		String karam = sharedPreferences.getString("param", "");
 		assert karam != null;
-		if(!karam.equals("")) {
-            Intent intent = new Intent(this, Inet.class);
-            startActivity(intent);
-        }
+		if (!karam.equals("")) {
+			Intent intent = new Intent(this, Inet.class);
+			startActivity(intent);
+		}
 		AndroidApplicationConfiguration config = new AndroidApplicationConfiguration();
-		initialize(new timmytimmysave(), config);
+		initialize(new spaceplanee(), config);
 	}
 
 	@Override

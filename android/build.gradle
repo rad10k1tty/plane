@@ -107,7 +107,7 @@ task run(type: Exec) {
     }
 
     def adb = path + "/platform-tools/adb"
-    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.timmytimmysave.savethetimmy/com.timmytimmysave.savethetimmy.AndroidLauncher'
+    commandLine "$adb", 'shell', 'am', 'start', '-n', 'com.spaceplanee.savethetimmy/com.spaceplanee.savethetimmy.AndroidLauncher'
 }
 
 dependencies {
