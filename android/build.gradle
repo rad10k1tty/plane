@@ -38,8 +38,8 @@ android {
         applicationId "com.spaceplanee.spaceplanee"
         minSdkVersion 21
         targetSdkVersion 30
-        versionCode 2
-        versionName "2.0"
+        versionCode 1
+        versionName "1.0"
         manifestPlaceholders = [onesignal_app_id: "f92de88d-2dec-43ae-96dc-73a406aff3eb",
                                 onesignal_google_project_number: "REMOTE"]
     }
